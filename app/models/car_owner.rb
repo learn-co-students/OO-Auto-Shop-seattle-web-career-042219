@@ -28,11 +28,10 @@ class CarOwner
   end
 
   def self.average_cars
-    arr = []
-    self.all.map do |owner|
-      arr << owner.cars.size
-    end
-    (arr.sum.to_f)/self.all.size
+    self.all.map {|owner| owner.cars.size}.sum.to_f/self.all.size
+    #   arr << owner.cars.size
+    # end
+    # (arr.sum.to_f)/self.all.size
   end
 
   def buy_car(car)
